@@ -6,41 +6,41 @@ Set Master Password: Secure your password manager with a master password.
 Add Passwords: Store website, username, and password securely.
 View Passwords: View saved passwords (after entering the correct master password).
 Delete Password: Remove saved passwords by specifying the website.
+
 Requirements
 Python 3.x
 cryptography library (for encryption)
 sqlite3 library (for database storage)
 tkinter library (for GUI)
 Installation
-Clone the repository:
-
+1. Clone the repository
 bash
 Copy code
 git clone https://github.com/yourusername/password-manager.git
 cd password-manager
-Install dependencies: Make sure you have the required dependencies installed. You can install them using pip:
+2. Install dependencies
+Make sure you have the required dependencies installed. You can install them using pip:
 
+bash
 Copy code
 pip install cryptography
-Run the application: To run the password manager, simply execute the script:
+3. Run the application
+To run the password manager, simply execute the script:
 
+bash
 Copy code
 python password_manager.py
 How to Use
-Set the Master Password:
-
+1. Set the Master Password
 When the application starts, you'll be prompted to set a master password. This password will be used to protect your saved passwords.
 The master password is securely hashed before being stored in the database.
-Add a Password:
-
+2. Add a Password
 To add a password, fill out the website, username, and password fields.
 The password will be encrypted before being saved in the database.
-View Saved Passwords:
-
+3. View Saved Passwords
 To view saved passwords, enter the correct master password.
 All saved passwords will be decrypted and displayed in the application.
-Delete a Password:
-
+4. Delete a Password
 To delete a password, enter the website's name and click "Delete Password".
 The password for the specified website will be removed from the database.
 Database Structure
@@ -66,4 +66,3 @@ Key File Missing: If the key.key file is deleted or missing, you won't be able t
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
