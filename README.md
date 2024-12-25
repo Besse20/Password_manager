@@ -1,149 +1,102 @@
-Password Manager
+# Password Manager
 
+A simple and secure password manager built with Python, using encryption to protect sensitive information. The application features a graphical user interface (GUI) built with `Tkinter` for managing and retrieving passwords securely.
 
-This is a simple password manager application that allows users to store and manage passwords securely using encryption and a master password. The application uses SQLite for storage and Fernet symmetric encryption for password security.
+---
 
-Features:
+## Features
+- **Master Password Protection**: Safeguards access to all stored passwords.
+- **Encrypted Password Storage**: Utilizes the `cryptography` library for secure encryption of passwords.
+- **Add Passwords**: Save website credentials securely.
+- **View Passwords**: Retrieve stored passwords (requires master password authentication).
+- **Delete Passwords**: Remove stored credentials by specifying the website.
+- **Persistent Storage**: Passwords are stored in an SQLite database.
 
+---
 
+## Prerequisites
+- Python 3.6 or higher
+- Required Python libraries:
+  - `cryptography`
+  - `sqlite3` (built-in)
+  - `tkinter` (built-in)
+  - `hashlib` (built-in)
 
-Set Master Password: Secure your password manager with a master password.
-
-
-Add Passwords: Store website, username, and password securely.
-
-
-View Passwords: View saved passwords (after entering the correct master password).
-
-
-Delete Password: Remove saved passwords by specifying the website.
-
-
-Requirements
-
-
-
-Python 3.x
-
-
-cryptography library (for encryption)
-
-
-sqlite3 library (for database storage)
-
-
-tkinter library (for GUI)
-
-
-Installation
-
-
-
-1. Clone the repository
-
-bash
-
-Copy code
-
-git clone https://github.com/yourusername/password-manager.git
-
-
-cd password-manager
-
-
-2. Install dependencies
-
-
-Make sure you have the required dependencies installed.
-
-
- You can install them using pip:
-
-bash
-
-Copy code
-
+To install the `cryptography` library, run:
+```bash
 pip install cryptography
+```
 
+---
 
-3. Run the application
+## Getting Started
 
+### 1. Clone or Download the Repository
+```bash
+git clone https://github.com/your-repo/password-manager.git
+cd password-manager
+```
 
-To run the password manager, simply execute the script:
-
-bash
-
-Copy code
-
+### 2. Run the Application
+```bash
 python password_manager.py
+```
 
-How to Use
+---
 
-1. Set the Master Password
+## How to Use
 
-When the application starts, you'll be prompted to set a master password. This password will be used to protect your saved passwords.
+### **Set the Master Password**
+1. On the first run, set a master password.
+2. This master password will be hashed and stored securely in the database.
+3. You will need this password to view, add, or delete credentials.
 
-The master password is securely hashed before being stored in the database.
+### **Add Passwords**
+1. Fill in the website, username, and password fields.
+2. Click **"Add Password"** to save the credentials securely.
 
-2. Add a Password
+### **View Passwords**
+1. Enter your master password.
+2. Click **"View Passwords"** to display the stored credentials in the text area.
 
-To add a password, fill out the website, username, and password fields.
+### **Delete Passwords**
+1. Enter your master password.
+2. Specify the website whose credentials you want to delete.
+3. Click **"Delete Password"**.
 
-The password will be encrypted before being saved in the database.
+---
 
-3. View Saved Passwords
+## Security Considerations
+- Passwords are encrypted using the `cryptography.fernet` symmetric encryption algorithm.
+- The master password is hashed using SHA-256 for secure storage.
+- Ensure the `key.key` file is kept secure, as it is essential for decrypting your passwords.
 
-To view saved passwords, enter the correct master password.
+---
 
-All saved passwords will be decrypted and displayed in the application.
+## Known Issues
+- Deleting a password requires an exact match of the website name.
+- Currently, there is no option to reset the master password.
 
-4. Delete a Password
+---
 
-To delete a password, enter the website's name and click "Delete Password".
+## Future Improvements
+- Implement a master password recovery option.
+- Enhance the GUI for a more user-friendly experience.
+- Add support for exporting/importing passwords.
 
-The password for the specified website will be removed from the database.
+---
 
-Database Structure
+## Contributing
+Pull requests are welcome. For significant changes, please open an issue to discuss what you would like to change.
 
-The application uses an SQLite database (password_manager.db) with the following tables:
+---
 
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-master_password: Stores the hashed master password.
+---
 
-
-id: Primary Key (integer)
-
-password_hash: Hashed master password (string)
-
-passwords: Stores the encrypted passwords for each website.
-
-
-
-id: Primary Key (integer)
-
-website: Website name (string)
-
-username: Username (string)
-
-password: Encrypted password (string)
-
-Security
-
-Encryption: The passwords are encrypted using the cryptography library's Fernet symmetric encryption scheme. The encryption key is stored in a separate file (key.key), and the key is loaded at runtime.
-
-Master Password: The master password is hashed using SHA-256 before being stored in the database.
-
-Troubleshooting
-
-Master Password Issue: If you forget your master password, there's no way to recover it. You will need to reset the password manager by deleting the database file (password_manager.db) and starting over.
-
-
-
-Key File Missing: If the key.key file is deleted or missing, you won't be able to decrypt stored passwords. It's important to keep the encryption key file safe.
-
-
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+## Socials
+Linkedin: https://www.linkedin.com/in/besufekad-terefe-34527a197/
+Instagram: https://instagram.com/besse.cs
+Telegram: https://t.me/besufekadd
