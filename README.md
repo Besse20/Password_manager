@@ -34,7 +34,7 @@ pip install cryptography
 ### 1. Clone or Download the Repository
 ```bash
 https://github.com/Besse20/Password_manager.git
-cd password-manager
+cd password_manager
 ```
 
 ### 2. Run the Application
