@@ -1,106 +1,69 @@
-# Password_manager
-
-This is a simple and secure command-line Password Manager application written in Python. It enables users to securely store, retrieve, and delete their passwords for various websites. Passwords are encrypted using the `Fernet` encryption from the `cryptography` library.
-
----
-
-## Features
-- **Add Passwords**: Store website credentials (username and password).
-- **View Passwords**: Retrieve and decrypt stored passwords.
-- **Delete Passwords**: Remove credentials for a specified website.
-- **Encryption**: All passwords are securely encrypted before being stored.
-- **Database Storage**: Uses SQLite for efficient and lightweight storage.
-
----
-
-## Prerequisites
-Ensure the following are installed on your system:
-- **Python 3.x**
-- **Required Python Libraries**:
-  - `cryptography`
-
-To install the necessary library, run:
-```bash
-pip3 install cryptography
-```
-
----
-
-## Installation
-1. Clone or download this repository.
-2. Navigate to the directory containing the script.
-3. Run the following command to start the application:
-   ```bash
-   python3 password_manager.py
-   ```
-
----
-
-## Usage
-
-### Menu Options
-When you run the application, you will see a menu:
-```
 Password Manager
-1. Add Password
-2. View Passwords
-3. Delete Password
-4. Exit
-```
+This is a simple password manager application that allows users to store and manage passwords securely using encryption and a master password. The application uses SQLite for storage and Fernet symmetric encryption for password security.
 
-### Adding a Password
-- Choose option `1` from the menu.
-- Enter the following information when prompted:
-  - Website name
-  - Username
-  - Password (input is hidden for security).
-- The credentials will be encrypted and stored in the database.
+Features
+Set Master Password: Secure your password manager with a master password.
+Add Passwords: Store website, username, and password securely.
+View Passwords: View saved passwords (after entering the correct master password).
+Delete Password: Remove saved passwords by specifying the website.
+Requirements
+Python 3.x
+cryptography library (for encryption)
+sqlite3 library (for database storage)
+tkinter library (for GUI)
+Installation
+Clone the repository:
 
-### Viewing Passwords
-- Choose option `2` from the menu.
-- All stored credentials will be displayed with decrypted passwords.
+bash
+Copy code
+git clone https://github.com/yourusername/password-manager.git
+cd password-manager
+Install dependencies: Make sure you have the required dependencies installed. You can install them using pip:
 
-### Deleting a Password
-- Choose option `3` from the menu.
-- Enter the website name for which the credentials should be deleted.
-- If the website exists in the database, the corresponding credentials will be removed.
+Copy code
+pip install cryptography
+Run the application: To run the password manager, simply execute the script:
 
-### Exiting the Application
-- Choose option `4` to exit the program.
+Copy code
+python password_manager.py
+How to Use
+Set the Master Password:
 
----
+When the application starts, you'll be prompted to set a master password. This password will be used to protect your saved passwords.
+The master password is securely hashed before being stored in the database.
+Add a Password:
 
-## File Structure
-- **`password_manager.py`**: The main script file for the application.
-- **`key.key`**: Automatically generated file that stores the encryption key (created on first run).
-- **`password_manager.db`**: SQLite database file where encrypted passwords are stored (created on first run).
+To add a password, fill out the website, username, and password fields.
+The password will be encrypted before being saved in the database.
+View Saved Passwords:
 
----
+To view saved passwords, enter the correct master password.
+All saved passwords will be decrypted and displayed in the application.
+Delete a Password:
 
-## Security
-- **Encryption**: All passwords are encrypted using the `Fernet` symmetric encryption.
-- **Encryption Key**: The `key.key` file is required for decryption. Do not share or lose this file.
+To delete a password, enter the website's name and click "Delete Password".
+The password for the specified website will be removed from the database.
+Database Structure
+The application uses an SQLite database (password_manager.db) with the following tables:
 
----
+master_password: Stores the hashed master password.
 
-## Future Enhancements
-- Add a master password for accessing the application.
-- Implement a password generator.
-- Create a graphical user interface (GUI).
-- Add data export/import functionality.
+id: Primary Key (integer)
+password_hash: Hashed master password (string)
+passwords: Stores the encrypted passwords for each website.
 
----
+id: Primary Key (integer)
+website: Website name (string)
+username: Username (string)
+password: Encrypted password (string)
+Security
+Encryption: The passwords are encrypted using the cryptography library's Fernet symmetric encryption scheme. The encryption key is stored in a separate file (key.key), and the key is loaded at runtime.
+Master Password: The master password is hashed using SHA-256 before being stored in the database.
+Troubleshooting
+Master Password Issue: If you forget your master password, there's no way to recover it. You will need to reset the password manager by deleting the database file (password_manager.db) and starting over.
 
-## License
-This project is licensed under the MIT License. Feel free to modify and use it as needed.
+Key File Missing: If the key.key file is deleted or missing, you won't be able to decrypt stored passwords. It's important to keep the encryption key file safe.
 
----
-
-## Acknowledgments
-This project uses the `cryptography` library for encryption and `sqlite3` for database management.
-
-should you have any questions don't hasitate to ask:
-linkedin: https://www.linkedin.com/in/besufekad-terefe-34527a197/
-Telegram:https://t.me/besufekadd
-instagram: https://instagram.com/besse.cs
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
