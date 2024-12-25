@@ -99,3 +99,8 @@ This project is licensed under the MIT License. Feel free to modify and use it a
 ## Acknowledgments
 This project uses the `cryptography` library for encryption and `sqlite3` for database management.
 
+should you have any questions don't hasitate to ask:
+linkedin: https://www.linkedin.com/in/besufekad-terefe-34527a197/
+Telegram:t.me/besufekadd
+instagram: instagram.com/besse.cs
+
