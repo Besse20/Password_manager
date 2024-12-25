@@ -101,6 +101,6 @@ This project uses the `cryptography` library for encryption and `sqlite3` for da
 
 should you have any questions don't hasitate to ask:
 linkedin: https://www.linkedin.com/in/besufekad-terefe-34527a197/
-Telegram:t.me/besufekadd
-instagram: instagram.com/besse.cs
+Telegram:https://t.me/besufekadd
+instagram: https://instagram.com/besse.cs
 
