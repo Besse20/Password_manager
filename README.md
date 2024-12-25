@@ -33,7 +33,7 @@ pip install cryptography
 
 ### 1. Clone or Download the Repository
 ```bash
-git clone https://github.com/your-repo/password-manager.git
+https://github.com/Besse20/Password_manager.git
 cd password-manager
 ```
 
@@ -97,6 +97,9 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 ## Socials
+
 Linkedin: https://www.linkedin.com/in/besufekad-terefe-34527a197/
+
 Instagram: https://instagram.com/besse.cs
+
 Telegram: https://t.me/besufekadd
