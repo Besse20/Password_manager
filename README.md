@@ -2,7 +2,7 @@
 
 A simple and secure password manager built with Python, using encryption to protect sensitive information. The application features a graphical user interface (GUI) built with `Tkinter` for managing and retrieving passwords securely.
 
----
+--- (besse)
 
 ## Features
 - **Master Password Protection**: Safeguards access to all stored passwords.
